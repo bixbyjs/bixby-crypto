@@ -15,8 +15,12 @@ describe('crypto/keyring', function() {
     expect(factory['@implements']).to.equal('http://i.bixbyjs.org/crypto/Keyring');
   });
   
-  describe('created object', function() {
-    var keyring = factory();
+  describe.skip('created object', function() {
+    var keyring;
+    
+    before(function() {
+      keyring = factory();
+    })
     
     it('should conform to interface', function() {
       expect(keyring).to.be.an('object');
