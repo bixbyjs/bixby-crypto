@@ -1,9 +1,9 @@
 exports = module.exports = function crypto(id) {
   var map = {
-    '': './main',
-    'keyring': './keyring',
-    'keyring/symmetric': './keyring/symmetric',
-    'rsg': './rsg'
+    '': './xom/main',
+    'keyring': './xom/keyring',
+    'keyring/symmetric': './xom/keyring/symmetric',
+    'rsg': './xom/rsg'
   };
   
   var mid = map[id];
