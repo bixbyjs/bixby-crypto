@@ -1,6 +1,6 @@
 exports = module.exports = function(container, logger) {
   // Load modules.
-  var PluggableKeyring = require('./internals/keyring');
+  var PluggableKeyring = require('../lib/keyring');
   
   
   /*

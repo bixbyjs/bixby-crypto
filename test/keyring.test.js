@@ -1,6 +1,6 @@
 /* global describe, it, expect */
 
-var factory = require('../lib/keyring');
+var factory = require('../xom/keyring');
 var expect = require('chai').expect;
 
 
