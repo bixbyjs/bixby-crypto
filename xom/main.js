@@ -1,8 +1,10 @@
-exports = module.exports = function() {
+exports = module.exports = function(keyGenerator) {
   var api = {};
   
-  api.generateKey = function() {
+  api.generateKey = function(options, cb) {
     console.log('GENERATE KEY...');
+    
+    keyGenerator.generate(options, cb);
   }
   
   return api;
@@ -10,4 +12,6 @@ exports = module.exports = function() {
 
 exports['@implements'] = 'http://i.bixbyjs.org/crypto';
 exports['@singleton'] = true;
-exports['@require'] = [];
+exports['@require'] = [
+  'http://i.bixbyjs.org/crypto/KeyGenerator'
+];
