@@ -23,6 +23,7 @@
   ],
   "main": "./lib",
   "dependencies": {
+    "akeypair": "^0.2.4",
     "cryptiles": "^3.0.0"
   },
   "devDependencies": {

@@ -4,7 +4,8 @@ exports = module.exports = function crypto(id) {
     'keygenerator': './xom/keygenerator',
     'keyring': './xom/keyring',
     'keyring/symmetric': './xom/keyring/symmetric',
-    'rsg': './xom/rsg'
+    'rsg': './xom/rsg',
+    'rsa/keygen': './xom/rsa/keygen'
   };
   
   var mid = map[id];
@@ -20,5 +21,7 @@ exports.used = function(container) {
   container.add('keyring');
   container.add('rsg');
   
-  container.add('keyring/symmetric')
+  container.add('keyring/symmetric');
+  
+  container.add('rsa/keygen');
 };
