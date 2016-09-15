@@ -1,22 +1,6 @@
-exports = module.exports = function crypto(id) {
-  var map = {
-    '': './xom/main',
-    'keygenerator': './xom/keygenerator',
-    'rsg': './xom/rsg',
-    'rsa/keygen': './xom/rsa/keygen'
-  };
-  
-  var mid = map[id];
-  if (mid) {
-    return require(mid);
-  }
-};
-
-exports.used = function(container) {
-  container.add(''); // main
-  
-  container.add('keygenerator');
-  container.add('rsg');
-  
-  container.add('rsa/keygen');
+exports = module.exports = {
+  '': './xom/main',
+  'keygenerator': require('./xom/keygenerator'),
+  'rsg': require('./xom/rsg'),
+  'rsa/keygen': require('./xom/rsa/keygen')
 };
