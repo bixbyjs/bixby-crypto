@@ -2,7 +2,6 @@ exports = module.exports = function() {
   // Load modules.
   var RSG = require('../lib/rsg');
   
-  
   return new RSG();
 }
 
