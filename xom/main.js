@@ -2,8 +2,6 @@ exports = module.exports = function(keyGenerator) {
   var api = {};
   
   api.generateKey = function(options, cb) {
-    console.log('GENERATE KEY...');
-    
     keyGenerator.generate(options, cb);
   }
   
