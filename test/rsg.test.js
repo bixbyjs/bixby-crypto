@@ -1,7 +1,7 @@
 /* global describe, it, expect */
 
-var factory = require('../xom/rsg');
 var expect = require('chai').expect;
+var factory = require('../xom/rsg');
 
 
 describe('crypto/rsg', function() {
