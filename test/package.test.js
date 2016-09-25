@@ -17,8 +17,8 @@ describe('bixby-crypto', function() {
     var main = source[''];
     
     it('should be annotated', function() {
-      expect(main['@singleton']).to.equal(true);
       expect(main['@implements']).to.equal('http://i.bixbyjs.org/crypto');
+      expect(main['@singleton']).to.equal(true);
     });
   });
   
@@ -26,8 +26,8 @@ describe('bixby-crypto', function() {
     var rsg = source['rsg'];
     
     it('should be annotated', function() {
-      expect(rsg['@singleton']).to.equal(true);
       expect(rsg['@implements']).to.equal('http://i.bixbyjs.org/crypto/RSG');
+      expect(rsg['@singleton']).to.equal(true);
     });
   });
   
