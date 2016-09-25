@@ -13,7 +13,7 @@ describe('bixby-crypto', function() {
     expect(source['rsg']).to.be.a('function');
   });
   
-  describe('-/', function() {
+  describe('crypto', function() {
     var main = source[''];
     
     it('should be annotated', function() {
@@ -22,7 +22,7 @@ describe('bixby-crypto', function() {
     });
   });
   
-  describe('-/rsg', function() {
+  describe('crypto/rsg', function() {
     var rsg = source['rsg'];
     
     it('should be annotated', function() {
