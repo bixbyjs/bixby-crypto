@@ -23,4 +23,4 @@ exports = module.exports = function() {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/crypto/keygenFunc';
-exports['@type'] = [ 'RSA' ];
+exports['@algorithm'] = [ 'RSASSA-PKCS1-v1_5' ];

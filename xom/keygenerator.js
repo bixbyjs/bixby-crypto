@@ -3,31 +3,20 @@ exports = module.exports = function(container, logger) {
   var KeyGenerator = require('../lib/keygenerator');
   
   
-  logger.info('Creating key generator <' + this.id + '>');
   var generator = new KeyGenerator();
+  var keygenDecls = container.specs('http://i.bixbyjs.org/crypto/keygenFunc');
   
-  var specs = container.specs()
-    , spec, pi, types, type
-    , i, len, j, jlen;
-  for (i = 0, len = specs.length; i < len; ++i) {
-    spec = specs[i];
-  
-    if (spec.implements.indexOf('http://i.bixbyjs.org/crypto/keygenFunc') !== -1) {
-      pi = container.create(spec.id);
-    
-      types = spec.a['@type'];
-      if (!Array.isArray(types)) {
-        types = [ types ];
-      }
-      for (j = 0, jlen = types.length; j < jlen; ++j) {
-        type = types[j];
-        generator.use(type, pi);
-        logger.info('Added support for generating keys of type: ' + type);
-      }
-    }
-  }
-  
-  return generator;
+  return Promise.all(keygenDecls.map(function(spec) { return container.create(spec.id); } ))
+    .then(function(plugins) {
+      // Register cryptographic key generation plugins.
+      plugins.forEach(function(plugin, i) {
+        generator.use(keygenDecls[i].a['@algorithm'] || plugin.name, plugin);
+        logger.info('Registered cryptographic key generator: ' + (keygenDecls[i].a['@algorithm'] || plugin.name));
+      });
+    })
+    .then(function() {
+      return generator;
+    });
 }
 
 exports['@implements'] = 'http://i.bixbyjs.org/crypto/KeyGenerator';

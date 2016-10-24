@@ -1,7 +1,7 @@
 {
   "name": "bixby-crypto",
   "version": "0.0.0",
-  "description": "",
+  "description": "Cryptographic components for Bixby.js.",
   "author": {
     "name": "Jared Hanson",
     "email": "jaredhanson@gmail.com",
