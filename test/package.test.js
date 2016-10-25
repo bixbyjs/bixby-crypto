@@ -22,6 +22,15 @@ describe('bixby-crypto', function() {
     });
   });
   
+  describe('crypto/keygenerator', function() {
+    var keyGenerator = pkg['keygenerator'];
+    
+    it('should be annotated', function() {
+      expect(keyGenerator['@implements']).to.equal('http://i.bixbyjs.org/crypto/KeyGenerator');
+      expect(keyGenerator['@singleton']).to.equal(true);
+    });
+  });
+  
   describe('crypto/rsg', function() {
     var rsg = pkg['rsg'];
     
