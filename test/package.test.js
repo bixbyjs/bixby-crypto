@@ -1,20 +1,20 @@
 /* global describe, it */
 
 var expect = require('chai').expect;
-var source = require('..');
+var pkg = require('..');
 
 
 describe('bixby-crypto', function() {
   
   it('should export manifest', function() {
-    expect(source).to.be.an('object');
-    expect(source['']).to.be.a('function');
-    expect(source['keygenerator']).to.be.a('function');
-    expect(source['rsg']).to.be.a('function');
+    expect(pkg).to.be.an('object');
+    expect(pkg['']).to.be.a('function');
+    expect(pkg['keygenerator']).to.be.a('function');
+    expect(pkg['rsg']).to.be.a('function');
   });
   
   describe('crypto', function() {
-    var main = source[''];
+    var main = pkg[''];
     
     it('should be annotated', function() {
       expect(main['@implements']).to.equal('http://i.bixbyjs.org/crypto');
@@ -23,7 +23,7 @@ describe('bixby-crypto', function() {
   });
   
   describe('crypto/rsg', function() {
-    var rsg = source['rsg'];
+    var rsg = pkg['rsg'];
     
     it('should be annotated', function() {
       expect(rsg['@implements']).to.equal('http://i.bixbyjs.org/crypto/RSG');
