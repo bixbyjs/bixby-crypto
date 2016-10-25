@@ -27,6 +27,7 @@
     "cryptiles": "^3.0.0"
   },
   "devDependencies": {
+    "node-forge": "^0.6.44",
     "make-node": "^0.3.0",
     "mocha": "^2.0.0",
     "chai": "^3.0.0",

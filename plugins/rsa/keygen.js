@@ -15,7 +15,11 @@ exports = module.exports = function() {
   var akeypair = require('akeypair');
   
   return function(options, cb) {
-    akeypair(options, function(err, pair) {
+    var opts = {};
+    opts.bits = options.length || 2048;
+    opts.e = options.exponent || 65537;
+    
+    akeypair(opts, function(err, pair) {
       if (err) { return cb(err); }
       return cb(null, { publicKey: pair.public, privateKey: pair.private });
     });
@@ -23,4 +27,4 @@ exports = module.exports = function() {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/crypto/keygenFunc';
-exports['@algorithm'] = 'RSASSA-PKCS1-v1_5';
+exports['@algorithm'] = 'RSA'; // RSASSA-PKCS1-v1_5
