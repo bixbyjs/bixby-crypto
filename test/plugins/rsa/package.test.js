@@ -17,7 +17,7 @@ describe('bixby-crypto/plugins/rsa', function() {
     it('should be annotated', function() {
       expect(keygen['@implements']).to.equal('http://i.bixbyjs.org/crypto/keygenFunc');
       expect(keygen['@singleton']).to.be.undefined;
-      expect(keygen['@algorithm']).to.equal('RSA');
+      expect(keygen['@type']).to.equal('RSA');
     });
   });
   

@@ -10,8 +10,8 @@ exports = module.exports = function(container, logger) {
     .then(function(plugins) {
       // Register cryptographic key generation plugins.
       plugins.forEach(function(plugin, i) {
-        generator.use(keygenDecls[i].a['@algorithm'] || plugin.name, plugin);
-        logger.info('Registered cryptographic key generator: ' + (keygenDecls[i].a['@algorithm'] || plugin.name));
+        generator.use(keygenDecls[i].a['@type'] || plugin.name, plugin);
+        logger.info('Registered cryptographic key generator: ' + (keygenDecls[i].a['@type'] || plugin.name));
       });
     })
     .then(function() {
