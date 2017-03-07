@@ -1,7 +1,7 @@
 /* global describe, it, expect */
 
 var expect = require('chai').expect;
-var factory = require('../lib/keygenerator');
+var factory = require('../app/keygenerator');
 
 
 describe('crypto/keygenerator', function() {

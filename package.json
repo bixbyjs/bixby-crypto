@@ -21,7 +21,7 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
-  "main": "./lib",
+  "main": "./app",
   "dependencies": {
     "akeypair": "^0.2.4",
     "cryptiles": "^3.0.0"
