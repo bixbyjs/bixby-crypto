@@ -3,6 +3,7 @@ exports = module.exports = {
   'keygenerator': require('./keygenerator'),
   'keyring': require('./keyring'),
   'keystore': require('./keystore'),
+  'keystore/memory': require('./keystore/memory'),
   'rsg': require('./rsg')
 };
 

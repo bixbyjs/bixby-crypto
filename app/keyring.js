@@ -1,8 +1,10 @@
-exports = module.exports = function(container) {
+exports = module.exports = function(container, keyStore) {
   var Client = require('nks').Client;
   
   
   // TODO: Make this a combination of KeyStore and KeyClient.
+  
+  return keyStore;
   
   var keyring = new Client();
   
@@ -15,4 +17,7 @@ exports = module.exports = function(container) {
 
 exports['@implements'] = [ 'http://i.bixbyjs.org/crypto/Keyring' ];
 exports['@singleton'] = true;
-exports['@require'] = [ '!container' ];
+exports['@require'] = [
+  '!container',
+  'http://i.bixbyjs.org/crypto/KeyStore'
+];
