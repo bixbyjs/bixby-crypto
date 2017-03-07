@@ -9,8 +9,10 @@ exports = module.exports = function(keyGenerator) {
       keyGenerator.generate({ type: 'RSA', length: 1024 }, function(err, key) {
         if (err) { return reject(err); }
         
-        key.usage = [ 'sign', 'verify' ];
+        //key.usages = [ 'sign', 'verify' ];
+        key.usages = [ 'sign' ];
         // TODO: Algorith usage
+        // rsa-sha256
         //key.algorithm = 'RSA-SHA256';
       
         keyStore.add(key, function(err) {

@@ -4,6 +4,7 @@ exports = module.exports = {
   'keyring': require('./keyring'),
   'keystore': require('./keystore'),
   'keystore/memory': require('./keystore/memory'),
+  'sym/property': require('./sym/property'),
   'rsg': require('./rsg')
 };
 
