@@ -1,3 +1,4 @@
+/*
 exports = module.exports = {
   '': require('./main'),
   'keygenerator': require('./keygenerator'),
@@ -7,8 +8,9 @@ exports = module.exports = {
   'sym/property': require('./sym/property'),
   'rsg': require('./rsg')
 };
+*/
 
-exports.load = function(id) {
+exports = module.exports = function(id) {
   try {
     return require('./' + id);
   } catch (ex) {
