@@ -31,7 +31,8 @@
       "keystore",
       "keystore/memory",
       "sym/property",
-      "rsg"
+      "rsg",
+      "rsa/keygen"
     ]
   },
   "dependencies": {
