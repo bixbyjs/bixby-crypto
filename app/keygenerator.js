@@ -29,7 +29,7 @@ KeyGenerator.prototype.generate = function(options, cb) {
 
 exports = module.exports = function(container, logger) {
   var generator = new KeyGenerator();
-  var keygenDecls = container.specs('http://i.bixbyjs.org/crypto/keygenFunc');
+  var keygenDecls = container.components('http://i.bixbyjs.org/crypto/keygenFunc');
   
   return Promise.all(keygenDecls.map(function(spec) { return container.create(spec.id); } ))
     .then(function(plugins) {

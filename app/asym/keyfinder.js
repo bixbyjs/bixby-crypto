@@ -5,7 +5,7 @@ exports = module.exports = function(container, logger) {
   
   var client = new Client();
   
-  var findFnDecls = container.specs('http://i.bixbyjs.org/crypto/asym/findKeysFunc');
+  var findFnDecls = container.components('http://i.bixbyjs.org/crypto/asym/findKeysFunc');
   return Promise.all(findFnDecls.map(function(spec) { return container.create(spec.id); } ))
     .then(function(fns) {
       fns.forEach(function(fn, i) {
