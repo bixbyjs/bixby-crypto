@@ -1,6 +1,6 @@
 var forge = require('node-forge');
 var expect = require('chai').expect;
-var factory = require('../../../plugins/rsa/keygen');
+var factory = require('../../../app/rsa/keygen');
 
 describe('crypto/plugins/rsa/keygen', function() {
   

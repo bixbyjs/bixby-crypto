@@ -22,7 +22,7 @@ describe('crypto/keygenerator', function() {
       
       before(function(done) {
         var container = {
-          specs: function(){ return[]; }
+          components: function(){ return[]; }
         };
         
         factory(container)

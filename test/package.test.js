@@ -1,11 +1,28 @@
 /* global describe, it */
 
 var expect = require('chai').expect;
-var pkg = require('..');
 
 
 describe('bixby-crypto', function() {
   
+  describe('package.json', function() {
+    var json = require('../package.json');
+    
+    it('should have assembly metadata', function() {
+      expect(json.assembly.namespace).to.equal('crypto');
+      
+      expect(json.assembly.components).to.have.length(8);
+      expect(json.assembly.components).to.include('main');
+    });
+  });
+  
+  it('should throw if required', function() {
+    expect(function() {
+      var pkg = require('..');
+    }).to.throw(Error).with.property('code', 'MODULE_NOT_FOUND');
+  });
+  
+  /*
   it('should export manifest', function() {
     expect(pkg).to.be.an('object');
     expect(pkg['']).to.be.a('function');
@@ -39,5 +56,6 @@ describe('bixby-crypto', function() {
       expect(rsg['@singleton']).to.equal(true);
     });
   });
+  */
   
 });
